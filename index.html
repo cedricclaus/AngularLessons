@@ -8,19 +8,8 @@
 
 </head>
 <body >
-<div ng-app="myApp">
-
-
-    <div ng-controller="AvengersCtrl">
-        <input type="text" ng-model="search.$">
-        <table>
-            <tr ng-repeat="actor in avengers.cast | orderBy:'name'| limitTo:5 | filter:search">
-                <td>{{actor.name | uppercase}}</td>
-                <td>{{actor.character | lowercase}}</td>
-            </tr>
-        </table>
-
-    </div>
+<div ng-app="superHero">
+    <superman></superman>
 </div>
 <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
