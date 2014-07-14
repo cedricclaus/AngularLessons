@@ -1,14 +1,19 @@
-/**
- * Created by cedric.claus on 23/05/2014.
- */
-var myApp = angular.module('superHero', []);
+var app = angular.module("behaviorApp", []);
 
-myApp.directive("superman",function(){
-    return {
-        restrict : "E",
-        template : "<div>Here I'am</div>"
+app.directive("enter", function() {
+    return function(scope, element, attrs) {
+        element.bind("mouseenter", function() {
+            element.addClass(attrs.enter);
+            console.info("I m in")
+        })
     }
 })
 
-
-
+app.directive("leave", function() {
+    return function(scope, element, attrs) {
+        element.bind("mouseleave", function() {
+            element.removeClass(attrs.enter);
+            console.info("I m out")
+        })
+    }
+})
